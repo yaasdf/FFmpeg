@@ -4,31 +4,6 @@ else()
     set(FFMPEG_LIB_PATH ${CMAKE_CURRENT_LIST_DIR}/lib/x86)
 endif()
 
-if (WIN32)
-    set(FFMPEG_LIB_FILES 
-        ${FFMPEG_LIB_PATH}/avcodec-59.dll
-        ${FFMPEG_LIB_PATH}/avdevice-59.dll
-        ${FFMPEG_LIB_PATH}/avfilter-8.dll
-        ${FFMPEG_LIB_PATH}/avformat-59.dll
-        ${FFMPEG_LIB_PATH}/swresample-4.dll
-        ${FFMPEG_LIB_PATH}/avutil-57.dll
-        ${FFMPEG_LIB_PATH}/swscale-6.dll
-        ${FFMPEG_LIB_PATH}/libwinpthread-1.dll
-        )
-    set(FFMPEG_IMPORT_LIBS
-        ${FFMPEG_LIB_PATH}/avcodec.lib
-        ${FFMPEG_LIB_PATH}/avdevice.lib
-        ${FFMPEG_LIB_PATH}/avfilter.lib
-        ${FFMPEG_LIB_PATH}/avformat.lib
-        ${FFMPEG_LIB_PATH}/swresample.lib
-        ${FFMPEG_LIB_PATH}/avutil.lib
-        ${FFMPEG_LIB_PATH}/swscale.lib
-        )
-else ()
-    set(FFMPEG_LIB_FILES )
-    set(FFMPEG_IMPORT_LIBS )
-endif()
-
 add_library(libavcodec    SHARED IMPORTED GLOBAL)
 add_library(libavdevice   SHARED IMPORTED GLOBAL)
 add_library(libavfilter   SHARED IMPORTED GLOBAL)
@@ -76,9 +51,3 @@ if (WIN32)
 elseif (LINUX)
 
 endif()
-
-set(EXT_DEPEND_LIBFILES ${EXT_DEPEND_LIBFILES} 
-        ${FFMPEG_LIB_FILES}
-        CACHE INTERNAL "dependencies"
-)
-set(EXT_DEPEND_LIBFILES_SET TRUE CACHE INTERNAL "dependencies")
