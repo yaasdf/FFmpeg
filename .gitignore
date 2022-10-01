@@ -42,4 +42,10 @@
 /mapfile
 /tools/python/__pycache__/
 
+# Add lib files
 !/lib/**
+
+# Include configure sources to prevent build failure
+!/config.h
+!/config.asm
+!/config_components.h

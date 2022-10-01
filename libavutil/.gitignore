@@ -1,2 +1,6 @@
 /avconfig.h
 /ffversion.h
+
+# Include configure sources to prevent build failure
+!/avconfig.h
+!/ffversion.h

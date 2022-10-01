@@ -1,2 +1,6 @@
 /indev_list.c
 /outdev_list.c
+
+# Include configure sources to prevent build failure
+!/indev_list.c
+!/outdev_list.c

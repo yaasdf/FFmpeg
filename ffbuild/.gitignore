@@ -5,3 +5,8 @@
 /config.log
 /config.mak
 /config.sh
+
+# Include configure sources to prevent build failure
+!/config.fate
+!/config.mak
+!/config.sh
