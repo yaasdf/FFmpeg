@@ -20,4 +20,5 @@ static const FFCodec * const codec_list[] = {
     &ff_wmv1_decoder,
     &ff_wmv2_decoder,
     &ff_wmv3_decoder,
+    &ff_av1_decoder,
     NULL };
